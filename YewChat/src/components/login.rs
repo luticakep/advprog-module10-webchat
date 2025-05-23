@@ -27,11 +27,53 @@ pub fn login() -> Html {
     };
 
     html! {
-       <div class="bg-gray-800 flex w-screen">
-            <div class="container mx-auto flex flex-col justify-center items-center">
-                <form class="m-4 flex">
-                    <input {oninput} class="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="Username" />
-                    <Link<Route> to={Route::Chat}> <button {onclick} disabled={username.len()<1} class="px-8 rounded-r-lg bg-violet-600	  text-white font-bold p-4 uppercase border-violet-600 border-t border-b border-r" >{"Go Chatting!"}</button></Link<Route>>
+        <div
+            class="flex w-screen h-screen items-center justify-center"
+            style="background-color: #FAF1E6;"
+        >
+            <div
+                class="p-8 rounded-lg shadow-lg"
+                style="background-color: #FDFAF6; max-width: 400px; width: 100%; text-align: center;"
+            >
+                <h1
+                    class="text-2xl font-bold mb-4"
+                    style="color: #99BC85;"
+                >
+                    {"🗨️ Welcome to KayChat!"}
+                </h1>
+
+                <p
+                    class="mb-6"
+                    style="color: #4A4A4A;"
+                >
+                    {"Enter a cool username and dive into the fun."}
+                </p>
+
+                <form class="flex">
+                    <input
+                        {oninput}
+                        placeholder="Your username"
+                        class="flex-grow rounded-l-lg p-3 outline-none"
+                        style="
+                            background-color: #E4EFE7;
+                            border: 1px solid #FAF1E6;
+                            color: #333;
+                        "
+                    />
+                    <Link<Route> to={Route::Chat}>
+                        <button
+                            {onclick}
+                            disabled={username.len() < 1}
+                            class="px-6 rounded-r-lg font-semibold"
+                            style="
+                                background-color: #99BC85;
+                                border: 1px solid #99BC85;
+                                color: #FDFAF6;
+                            "
+                        >
+                            {"Start Chatting"}
+                        </button>
+                    </Link<Route>>
                 </form>
             </div>
         </div>
